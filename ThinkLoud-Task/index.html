@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+	<title>Rest. order</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1 class="text-left">Restaurant Order</h1>
+		</div>
+		<div class="row">
+			<section class="row" ng-controller="PanelController as panel">
+				<ul class="nav nav-tabs" ng-init="tab = 1">
+					<li class="{active : panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Add meal</a></li>
+					<li class="{active : panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Add order</a></li>
+					<li class="{active : panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Report</a></li>
+					
+				</ul>
+				<div class="panel" ng-show="panel.isSelected(1)">
+					<div class="add-meal-wrapper">
+						<div class="row">
+							<form class="form" ng-controller="orderController  as order" >
+								
+									<div class="form-group col-lg-6">
+										    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Category</label>
+										    <select class="col-lg-6 col-md-6 col-sm-6 col-xs-6"
+										     class="form-control"   ng-model="order.orders.Category" ng-option="
+										     x in orders.Category">
+
+										    	<option vlaue="">Select the Category</option>
+										    	<!-- <option vlaue="Meal2">category 2</option>
+										    	<option vlaue="Meal3">category 3</option>
+										    	<option vlaue="Meal4">category 4</option>
+										    	<option vlaue="Meal5">category 5</option> -->
+										    </select>
+										  </div>
+								
+								<div class="form-group col-lg-6">
+								<div class="col-lg-12" >
+								    <label>
+								      <input type="checkbox">Combo - Add 2LE
+								    <label>
+								</div>
+								</div>
+								<div class="form-group col-lg-6">
+										    <label for="exampleInputEmail1" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Meal</label>
+										    <select class="col-lg-6 col-md-6 col-sm-6 col-xs-6" class="form-control">
+										    	<option vlaue="">Select the meal</option>
+										    	<option vlaue="Meal1">Meal 1</option>
+										    	<option vlaue="Meal2">Meal 2</option>
+										    	<option vlaue="Meal3">Meal 3</option>
+										    	<option vlaue="Meal4">Meal 4</option>
+										    	<option vlaue="Meal5">Meal 5</option>
+										    </select>
+										  </div>
+										<div class="form-group col-lg-6">
+								<div class="col-lg-12" >
+								    <label>
+								      <input type="checkbox"> spicy - Add 1LE
+								    <label>
+								</div>
+								</div>	  
+
+								<div class="form-group col-lg-6">
+								    <label for="inputEmail3" class="col-lg-6 control-label">Q</label>
+								    <div class="col-sm-6">
+								      <input type="text" class="form-control" id="inputEmail3" placeholder="quantitiy">
+								    </div>
+								  </div>
+								  
+								  <div class="form-group">
+								    <div class="col-sm-offset-2 col-sm-10">
+								      <button type="submit" class="btn btn-primary btn-lg pull-right">Add</button>
+								    </div>
+								  </div>	
+								
+							</form>
+
+							
+						</div>
+						
+					</div>
+					<div class="row">
+					<table class="table table-bordered table-hover ">
+  <th>
+  	<td>Hello1 </td>
+  	<td>Hello1 </td>
+  	<td>Hello1 </td>
+  	<td>Hello1 </td>
+  	<td>Hello1 </td>
+  </th>
+  <tr>
+  	<td>Hello1 </td>
+  	<td>Hello1 </td>
+  	<td>Hello1 </td>
+  	<td>Hello1 </td>
+  	<td>Hello1 </td>
+
+  </tr>
+</table>
+</div>
+
+				
+
+
+
+
+				</div>
+			    <div class="panel" ng-show="panel.isSelected(2)">
+				<h4>Add meal 2 </h4>
+				<p>not yet</p>
+			    </div>
+			    <div class="panel" ng-show="panel.isSelected(3)">
+				<h4>Add meal 3</h4>
+				<p>not yet</p>
+			    </div>
+			</section>
+			
+
+		</div>
+		
+	</div>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
